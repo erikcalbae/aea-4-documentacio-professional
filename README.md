@@ -1,10 +1,4 @@
-# 🎬 Cercador de Pel·lícules — Vuetify 3 & OMDb API
-
-![Vue.js](https://img.shields.io/badge/Vue.js-3.5-4FC08D?style=for-the-badge&logo=vuedotjs&logoColor=white)
-![Vite](https://img.shields.io/badge/Vite-8.0-646CFF?style=for-the-badge&logo=vite&logoColor=white)
-![Vuetify](https://img.shields.io/badge/Vuetify-3.x-1867C0?style=for-the-badge&logo=vuetify&logoColor=white)
-![OMDb API](https://img.shields.io/badge/API-OMDb-f5c518?style=for-the-badge&logo=imdb&logoColor=black)
-![DAM 2](https://img.shields.io/badge/DAM_2-Desenvolupament_d'Interfícies-orange?style=for-the-badge)
+# Cercador de Pel·lícules — Vuetify 3 & OMDb API
 
 > **AEA 4: Creació de Documentació Tècnica i Manual d'Usuari**  
 > **Activitat 4:** Documentació Professional d'un Projecte  
@@ -14,7 +8,7 @@
 
 ---
 
-## 📌 1. Descripció del Projecte
+## 1. Descripció del Projecte
 
 Aquest projecte consisteix en una aplicació web interactiva de **cerca i consulta de pel·lícules i sèries en temps real**, construïda amb **Vue 3**, **Vuetify** i **Vite**, que es connecta al servei extern de l'**API d'OMDb** (Open Movie Database).
 
@@ -24,7 +18,7 @@ L'usuari pot introduir qualsevol títol o paraula clau per obtenir instantàniam
 
 ---
 
-## 🛠️ 2. Tecnologies Utilitzades
+##  2. Tecnologies Utilitzades
 
 El projecte s'ha elaborat emprant les següents tecnologies i biblioteques:
 
@@ -38,7 +32,7 @@ El projecte s'ha elaborat emprant les següents tecnologies i biblioteques:
 
 ---
 
-## 🚀 3. Instruccions d'Instal·lació i Execució en Local
+##  3. Instruccions d'Instal·lació i Execució en Local
 
 Per poder clonar, instal·lar i executar aquesta aplicació al teu ordinador de manera local, segueix aquests passos:
 
@@ -95,7 +89,7 @@ El terminal et mostrarà l'adreça local on s'està executant l'aplicació, habi
 ```
 
 Obre el teu navegador web preferit (Chrome, Edge, Firefox) i accedeix a:
-👉 **`http://localhost:3000`** *(o el port indicat al teu terminal)*.
+ **`http://localhost:3000`** *(o el port indicat al teu terminal)*.
 
 ---
 
@@ -110,10 +104,10 @@ Els arxius llestos per a producció es crearan automàticament a la carpeta `dis
 
 ---
 
-## ⚙️ 4. Configuració de l'API (OMDb)
+##  4. Configuració de l'API (OMDb)
 
 L'aplicació es comunica amb l'API d'OMDb a través d'un mòdul de servei aïllat a:
-📂 `src/services/communicationManager.js`.
+ `src/services/communicationManager.js`.
 
 El servei utilitza una clau d'API (`API_KEY`) pròpia ja configurada. Si en algun moment vols utilitzar la teva pròpia clau gratuïta d'OMDb:
 1. Obtingues la teva clau a [http://www.omdbapi.com/apikey.aspx](http://www.omdbapi.com/apikey.aspx).
@@ -125,7 +119,7 @@ El servei utilitza una clau d'API (`API_KEY`) pròpia ja configurada. Si en algu
 
 ---
 
-## 📖 5. Descripció de l'Ús Bàsic de l'Aplicació
+##  5. Descripció de l'Ús Bàsic de l'Aplicació
 
 L'aplicació ha estat dissenyada per oferir una experiència neta, àgil i sense complicacions:
 
@@ -158,7 +152,7 @@ L'aplicació ha estat dissenyada per oferir una experiència neta, àgil i sense
 
 ---
 
-## 🎨 6. Principis de Disseny Aplicats (C.R.A.P.)
+##  6. Principis de Disseny Aplicats (C.R.A.P.)
 
 Seguint els requisits de disseny del mòdul de *Desenvolupament d'Interfícies*, s'han implementat estrictament els 4 pilars C.R.A.P.:
 
@@ -169,7 +163,7 @@ Seguint els requisits de disseny del mòdul de *Desenvolupament d'Interfícies*,
 
 ---
 
-## 📁 7. Estructura de Carpetes del Projecte
+##  7. Estructura de Carpetes del Projecte
 
 ```text
 aea-4-documentacio-professional/
@@ -189,25 +183,25 @@ aea-4-documentacio-professional/
 │   ├── styles/                 # Estils globals (Sass i Tailwind)
 │   ├── App.vue                 # Component arrel de l'aplicació
 │   └── main.ts                 # Punt d'entrada de Vue 3
-├── MANUAL_USUARI.pdf           # 📄 Manual d'usuari per a l'usuari final (1 pàgina)
+├── MANUAL_USUARI.pdf           #  Manual d'usuari per a l'usuari final (1 pàgina)
 ├── manual_usuari.html          # Codi font HTML/CSS del manual d'usuari
 ├── index.html                  # Plantilla HTML principal
 ├── package.json                # Dependències i scripts de comanda
 ├── vite.config.mts             # Configuració del compilador Vite
-└── README.md                   # 📘 Aquesta documentació tècnica
+└── README.md                   #  Aquesta documentació tècnica
 ```
 
 ---
 
-## 📄 8. Manual d'Usuari
+##  8. Manual d'Usuari
 
 Com a part dels requisits de l'activitat, s'ha redactat una guia ràpida per a usuaris no tècnics en un document PDF de màxima claredat i exactament **1 pàgina**:
 
-👉 **[Descarregar / Consultar MANUAL_USUARI.pdf](./MANUAL_USUARI.pdf)**
+ **[Descarregar / Consultar MANUAL_USUARI.pdf](./MANUAL_USUARI.pdf)**
 
 ---
 
-## 👨‍💻 9. Autor i Dades Acadèmiques
+##  9. Autor i Dades Acadèmiques
 
 - **Alumne:** Erik Calvo Baeza
 - **GitHub:** [@erikcalbae](https://github.com/erikcalbae)
