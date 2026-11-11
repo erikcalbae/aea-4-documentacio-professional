@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <title>Manual d'Usuari - Cercador de Pel·lícules</title>
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 10mm 12mm;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: #1e293b;
+      background: #ffffff;
+      line-height: 1.38;
+      font-size: 11.5px;
+    }
+    /* Capçalera principal */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2.5px solid #1976d2;
+      padding-bottom: 8px;
+      margin-bottom: 11px;
+    }
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo-icon {
+      width: 38px;
+      height: 38px;
+      background: linear-gradient(135deg, #1976d2, #1565c0);
+      color: #ffffff;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      box-shadow: 0 2px 5px rgba(25, 118, 210, 0.3);
+    }
+    .title-group h1 {
+      font-size: 17px;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: -0.3px;
+    }
+    .title-group p {
+      font-size: 10.5px;
+      color: #64748b;
+      margin-top: 1px;
+    }
+    .header-meta {
+      text-align: right;
+      font-size: 9.5px;
+      color: #475569;
+    }
+    .badge-tag {
+      background: #e3f2fd;
+      color: #1565c0;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 999px;
+      display: inline-block;
+      margin-bottom: 3px;
+      font-size: 9.5px;
+    }
+
+    /* Introducció ràpida */
+    .intro-banner {
+      background: #f8fafc;
+      border-left: 3.5px solid #1976d2;
+      padding: 7px 10px;
+      border-radius: 0 6px 6px 0;
+      font-size: 10.5px;
+      color: #334155;
+      margin-bottom: 11px;
+    }
+
+    /* Graella de Passos d'Ús */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 9px;
+      margin-bottom: 11px;
+    }
+    .step-card {
+      border: 1px solid #e2e8f0;
+      border-radius: 7px;
+      padding: 8px 10px;
+      background: #ffffff;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+    }
+    .step-header {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      margin-bottom: 5px;
+    }
+    .step-num {
+      width: 20px;
+      height: 20px;
+      background: #1976d2;
+      color: #ffffff;
+      border-radius: 50%;
+      font-size: 10.5px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .step-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: #0f172a;
+    }
+    .step-desc {
+      font-size: 10.5px;
+      color: #475569;
+      line-height: 1.35;
+    }
+    .step-desc strong {
+      color: #1e293b;
+    }
+
+    /* Mockup visual de l'app / Esquema */
+    .mockup-container {
+      background: #f1f5f9;
+      border: 1px dashed #cbd5e1;
+      border-radius: 7px;
+      padding: 8px 10px;
+      margin-bottom: 11px;
+    }
+    .mockup-header {
+      font-size: 11px;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .mockup-flow {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      font-size: 10px;
+    }
+    .mockup-box {
+      flex: 1;
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      border-radius: 5px;
+      padding: 6px;
+      text-align: center;
+    }
+    .mockup-box .label {
+      font-weight: 700;
+      color: #1976d2;
+      display: block;
+      margin-bottom: 2px;
+    }
+    .mockup-box .sub {
+      color: #64748b;
+      font-size: 9px;
+    }
+    .arrow {
+      color: #94a3b8;
+      font-weight: bold;
+      font-size: 13px;
+    }
+
+    /* Secció Detall Modal i C.R.A.P. */
+    .details-row {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 9px;
+      margin-bottom: 10px;
+    }
+    .info-panel {
+      border: 1px solid #e2e8f0;
+      border-radius: 7px;
+      padding: 8px 10px;
+      background: #ffffff;
+    }
+    .info-panel h3 {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .info-list {
+      list-style: none;
+      font-size: 10px;
+      color: #334155;
+    }
+    .info-list li {
+      margin-bottom: 3.5px;
+      display: flex;
+      align-items: flex-start;
+      gap: 5px;
+    }
+    .info-list li::before {
+      content: "•";
+      color: #1976d2;
+      font-weight: bold;
+    }
+
+    /* Consells i FAQ */
+    .faq-box {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 6px;
+      padding: 7px 10px;
+      font-size: 10px;
+      color: #1e3a8a;
+      margin-bottom: 10px;
+    }
+    .faq-title {
+      font-weight: 700;
+      font-size: 10.5px;
+      margin-bottom: 3px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .faq-content {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .faq-item {
+      flex: 1;
+    }
+
+    /* Peu de pàgina */
+    .footer {
+      border-top: 1px solid #e2e8f0;
+      padding-top: 6px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 9px;
+      color: #64748b;
+    }
+    .footer strong {
+      color: #334155;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Capçalera -->
+  <div class="header">
+    <div class="header-left">
+      <div class="logo-icon">🎬</div>
+      <div class="title-group">
+        <h1>MANUAL D'USUARI — CERCADOR DE PEL·LÍCULES</h1>
+        <p>Guia ràpida pas a pas per a l'usuari final (Sense coneixements tècnics)</p>
+      </div>
+    </div>
+    <div class="header-meta">
+      <span class="badge-tag">Versió 1.0 — Guia Oficial</span>
+      <div>2n DAM · Desenvolupament d'Interfícies</div>
+    </div>
+  </div>
+
+  <!-- Banner introductori -->
+  <div class="intro-banner">
+    <strong>Benvingut/da!</strong> Aquesta aplicació web et permet cercar qualsevol pel·lícula o sèrie del món de forma immediata, consultar-ne la caràtula oficial i veure'n tots els detalls (sinopsi, actors, director i valoració). No cal registrar-se ni instal·lar res: només necessites el teu navegador web.
+  </div>
+
+  <!-- Graella dels 4 passos principals -->
+  <div class="steps-grid">
+    <div class="step-card">
+      <div class="step-header">
+        <div class="step-num">1</div>
+        <div class="step-title">Escriu el que vols cercar</div>
+      </div>
+      <div class="step-desc">
+        A la part superior veuràs la barra de text amb la icona de la lupa. Escriu el nom de la pel·lícula o sèrie que vulguis trobar (exemples: <em>Batman</em>, <em>Avatar</em>, <em>Titanic</em>).
+      </div>
+    </div>
+
+    <div class="step-card">
+      <div class="step-header">
+        <div class="step-num">2</div>
+        <div class="step-title">Fes clic a "Cercar"</div>
+      </div>
+      <div class="step-desc">
+        Prem el botó blau <strong>Cercar</strong> o la tecla <strong>Enter</strong> del teu teclat. L'aplicació consultarà la base de dades i et mostrarà els resultats en pocs segons.
+      </div>
+    </div>
+
+    <div class="step-card">
+      <div class="step-header">
+        <div class="step-num">3</div>
+        <div class="step-title">Explora les targetes de resultats</div>
+      </div>
+      <div class="step-desc">
+        Cada títol apareix en una targeta visual amb el cartell oficial, el títol complet, l'any de llançament i una etiqueta que indica si és una <strong>pel·lícula</strong> o una <strong>sèrie</strong>.
+      </div>
+    </div>
+
+    <div class="step-card">
+      <div class="step-header">
+        <div class="step-num">4</div>
+        <div class="step-title">Consulta la informació completa</div>
+      </div>
+      <div class="step-desc">
+        Fes clic al botó blau <strong>+ Més informació</strong> situat sota qualsevol targeta per obrir una finestra amb l'argument detallat, director, gènere i repartiment d'actors.
+      </div>
+    </div>
+  </div>
+
+  <!-- Esquema visual del flux d'ús -->
+  <div class="mockup-container">
+    <div class="mockup-header">🔍 Flux de Funcionament de la Pantalla:</div>
+    <div class="mockup-flow">
+      <div class="mockup-box">
+        <span class="label">1. Barra de Cerca</span>
+        <span class="sub">Camp de text + Botons "Cercar" i "Netejar"</span>
+      </div>
+      <span class="arrow">➜</span>
+      <div class="mockup-box">
+        <span class="label">2. Graella de Fitxes</span>
+        <span class="sub">Pòster + Tipus + Títol + Botó "+ Més info"</span>
+      </div>
+      <span class="arrow">➜</span>
+      <div class="mockup-box">
+        <span class="label">3. Finestra Emergent (Modal)</span>
+        <span class="sub">Sinopsi completa, nota IMDb i fitxa tècnica</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Seccions de Detalls i Botons Auxiliars -->
+  <div class="details-row">
+    <div class="info-panel">
+      <h3>📋 Què veuràs a la finestra de detalls?</h3>
+      <ul class="info-list">
+        <li><strong>Sinopsi completa:</strong> L'explicació detallada de la trama de l'obra.</li>
+        <li><strong>Dades tècniques:</strong> Gènere cinematogràfic, durada en minuts i any.</li>
+        <li><strong>Equip artístic:</strong> Director/a principal i llista dels actors protagonistes.</li>
+        <li><strong>Valoració IMDb:</strong> Puntuació internacional oficial (ex: ★ 8.8/10).</li>
+        <li><strong>Com tancar-la:</strong> Prem el botó <em>Tancar</em> o fes clic fora de la finestra.</li>
+      </ul>
+    </div>
+
+    <div class="info-panel">
+      <h3>🧹 Com reiniciar o fer una nova cerca?</h3>
+      <ul class="info-list">
+        <li><strong>Botó "Netejar":</strong> Buida immediatament la llista de resultats i el camp de text per començar una cerca des de zero.</li>
+        <li><strong>Creu (✖) al cercador:</strong> Esborra ràpidament el text introduït sense perdre la posició.</li>
+        <li><strong>Historial:</strong> Pots fer tantes cerques com vulguis de manera il·limitada.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Consells ràpids i Resolució de dubtes -->
+  <div class="faq-box">
+    <div class="faq-title">💡 Preguntes Freqüents i Consells Útils</div>
+    <div class="faq-content">
+      <div class="faq-item">
+        <strong>• No trobes la pel·lícula?</strong> Prova d'escriure el títol original en anglès (ex: <em>The Lord of the Rings</em> en comptes d'<em>El Senyor dels Anells</em>) o una sola paraula clau.
+      </div>
+      <div class="faq-item">
+        <strong>• Què vol dir la rodeta que gira?</strong> L'aplicació està connectant amb la base de dades a través d'Internet. Espera un o dos segons a que acabin de carregar els pòsters.
+      </div>
+    </div>
+  </div>
+
+  <!-- Peu de pàgina -->
+  <div class="footer">
+    <div><strong>Autor:</strong> Erik Calvo Baeza (DAM 2) · <strong>Mòdul:</strong> Desenvolupament d'Interfícies (AEA 4)</div>
+    <div>Projecte: <em>Cercador de Pel·lícules amb Vuetify 3</em> · Curs 2026-2027 · Pàgina 1 de 1</div>
+  </div>
+
+</body>
+</html>
